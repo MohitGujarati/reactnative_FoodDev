@@ -1,17 +1,36 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, View, Button} from 'react-native';
+import React, {useState} from 'react';
 import Discounted from '../Componenets/Discounted';
 import ProfileDetails from '../Componenets/ProfileDetails';
+import Explore from '../Componenets/Explore';
+import DividerWithLines from '../Componenets/Divider';
 
 const Home = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  const textColor = isDarkMode ? 'black' : 'white';
   return (
-    <View>
-      <ProfileDetails />
-      <Discounted />
+    <View style={[{backgroundColor: textColor}]}>
+      <Button
+        title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        onPress={toggleDarkMode}
+      />
+
+      <ProfileDetails isDarkMode={isDarkMode} />
+      <Discounted isDarkMode={isDarkMode} />
+      <DividerWithLines text={'Explore'} isDarkMode={isDarkMode} />
+      <Explore isDarkMode={isDarkMode} />
+      <DividerWithLines text={'ALL RESTURANTS '} isDarkMode={isDarkMode} />
     </View>
   );
 };
 
 export default Home;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+
+});
