@@ -5,7 +5,13 @@ import ProfileDetails from '../Componenets/ProfileDetails';
 import Explore from '../Componenets/Explore';
 import DividerWithLines from '../Componenets/Divider';
 
-const Home = () => {
+
+interface HomeProps {
+  email: string;
+}
+
+const Home = ({email}:HomeProps) => {
+
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -19,8 +25,8 @@ const Home = () => {
         title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         onPress={toggleDarkMode}
       />
-
-      <ProfileDetails isDarkMode={isDarkMode} />
+      
+      <ProfileDetails isDarkMode={isDarkMode} email={email} />
       <Discounted isDarkMode={isDarkMode} />
       <DividerWithLines text={'Explore'} isDarkMode={isDarkMode} />
       <Explore isDarkMode={isDarkMode} />
@@ -31,6 +37,4 @@ const Home = () => {
 
 export default Home;
 
-const styles = StyleSheet.create({
-
-});
+const styles = StyleSheet.create({});
