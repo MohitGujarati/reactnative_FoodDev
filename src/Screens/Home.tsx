@@ -4,6 +4,7 @@ import Discounted from '../Componenets/Discounted';
 import ProfileDetails from '../Componenets/ProfileDetails';
 import Explore from '../Componenets/Explore';
 import DividerWithLines from '../Componenets/Divider';
+import Topbaritems from '../Componenets/topbar';
 
 
 interface HomeProps {
@@ -20,12 +21,13 @@ const Home = ({email}:HomeProps) => {
 
   const textColor = isDarkMode ? 'black' : 'white';
   return (
+
     <View style={[{backgroundColor: textColor}]}>
       <Button
         title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         onPress={toggleDarkMode}
       />
-      
+      <Topbaritems isDarkMode={isDarkMode}/>
       <ProfileDetails isDarkMode={isDarkMode} email={email} />
       <Discounted isDarkMode={isDarkMode} />
       <DividerWithLines text={'Explore'} isDarkMode={isDarkMode} />

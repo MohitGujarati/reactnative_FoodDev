@@ -48,7 +48,7 @@ const discountedList = [
   // Add more discounted details for other restaurants
 ];
 
-const Discounted = ({isDarkMode}) => {
+const Discounted = ({isDarkMode}:any) => {
   const textColor = isDarkMode ? 'white' : 'black';
 
   const imageLink =
