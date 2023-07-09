@@ -24,9 +24,9 @@ const Topbaritems = ({isDarkMode}: any) => {
         {/* Firstcol */}
         <View style={[styles.flexCol,styles.Colspaceing,]}>
           <TextInput style={[styles.firstcolitems]} placeholder="ItemCount" />
+          <TextInput style={[styles.firstcolitems,{marginTop:10}]} placeholder="ItemCount" />
           <TextInput style={[styles.firstcolitems]} placeholder="ItemCount" />
-          <TextInput style={[styles.firstcolitems]} placeholder="ItemCount" />
-          <TextInput style={[styles.firstcolitems]} placeholder="ItemCount" />
+          <TextInput style={[styles.firstcolitems,{marginTop:30}]} placeholder="ItemCount" />
         </View>
         {/* Secondcol */}
         <View style={[styles.flexCol,styles.Colspaceing]}>
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     height:34,
     color:'#000',
     width:190,
+    marginLeft:5,
     backgroundColor:'#ff00ff',
     borderRadius:8,
     borderWidth:1,
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     height:34,
     color:'#000',
     backgroundColor:'#408080',
-    borderRadius:81,
+    borderRadius:8,
     borderWidth:1,
     borderColor:'#000',
     
@@ -114,11 +115,12 @@ const styles = StyleSheet.create({
   thirdcolitem:{
     height:34,
     color:'#000',
+    width:105,
     backgroundColor:'#804000',
     borderRadius:8,
     borderWidth:1,
     borderColor:'#000',
-    marginTop:7,
+    marginTop:27,
   },
 
   thirdcolrowitem:{
@@ -126,11 +128,10 @@ const styles = StyleSheet.create({
     color:'#000',
     backgroundColor:'#00ff00',
     borderRadius:18,
-    width:60,
+    width:50,
     borderWidth:1,
     borderColor:'#000',
     marginTop:7,
-    
   },
 
 
